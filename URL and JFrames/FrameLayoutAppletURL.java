@@ -6,6 +6,11 @@ import javax.swing.*;
 import java.net.*;
 import java.io.*;
 
+/**
+ * Main application class that implements a URL link extractor with a graphical interface.
+ * This class provides functionality to fetch and display links from web pages using
+ * Java Swing components and custom rendering.
+ */
 public class FrameLayoutAppletURL extends JFrame implements ActionListener, MouseMotionListener, MouseListener
 {
    private JButton getlink = new JButton("Get Link");
@@ -28,6 +33,10 @@ public class FrameLayoutAppletURL extends JFrame implements ActionListener, Mous
 
    public int x=0;
 
+   /**
+    * Main entry point for the application
+    * @param args Command line arguments (not used)
+    */
    public static void main(String args[])
    {
       FrameLayoutAppletURL application = new FrameLayoutAppletURL("personal info");
@@ -35,7 +44,10 @@ public class FrameLayoutAppletURL extends JFrame implements ActionListener, Mous
       application.show();
    }
 
-
+   /**
+    * Constructor that initializes the GUI components and sets up the layout
+    * @param title The title of the application window
+    */
    public  FrameLayoutAppletURL( String title)
    {
       super(title);
@@ -73,6 +85,10 @@ public class FrameLayoutAppletURL extends JFrame implements ActionListener, Mous
       filemenu.addActionListener(this); 
    }
 
+   /**
+    * Reads and processes URLs from the input field.
+    * Extracts links from the HTML content and displays them in the canvas.
+    */
    public void readURL()
    {
       try {
@@ -108,6 +124,10 @@ public class FrameLayoutAppletURL extends JFrame implements ActionListener, Mous
       }
    }
    
+   /**
+    * Handles action events from buttons and menu items
+    * @param e The action event to handle
+    */
    public void  actionPerformed (ActionEvent e)
    { 
       //output.repaint();
@@ -127,6 +147,7 @@ public class FrameLayoutAppletURL extends JFrame implements ActionListener, Mous
       }
    } 
    
+   // Mouse event handler implementations
    public void mouseMoved(MouseEvent e) {
    
    }
@@ -151,6 +172,11 @@ public class FrameLayoutAppletURL extends JFrame implements ActionListener, Mous
    
    }
 
+   /**
+    * Handles mouse click events on the canvas
+    * Detects if a link was clicked and processes the interaction
+    * @param e The mouse event containing click coordinates
+    */
    public void mouseClicked(MouseEvent e) 
    {
       int mouseX = e.getX();
